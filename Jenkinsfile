@@ -13,7 +13,7 @@ pipeline {
         }
                   stage('continuos deployment') {
                       steps {
-                    sh 'cp target/Example-0.0.1-SNAPSHOT.war /var/lib/apache-tomcat-9.0.56/webapps'
+                    sh 'sshpass -p "suri" scp target/Example-0.0.1-SNAPSHOT.war root@172.17.0.3:/opt/apache-tomcat-9.0.56/webapps'
             }
         }
     }
